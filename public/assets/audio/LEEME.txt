@@ -1,0 +1,1 @@
+Coloca aquí tus archivos de audio (.mp3 o .wav) cuando los tengas listos. El juego ya cuenta con efectos de sonido arcade generados por Web Audio API mediante soundService.

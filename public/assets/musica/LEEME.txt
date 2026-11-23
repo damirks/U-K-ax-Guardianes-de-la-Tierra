@@ -1,0 +1,8 @@
+Coloca aquí tu archivo de música en formato MP3 con el nombre exacto:
+
+tema.mp3
+
+Ruta completa dentro del proyecto:
+public/assets/musica/tema.mp3
+
+El videojuego lo detectará automáticamente y lo reproducirá de fondo en bucle infinito (loop), respetando el botón de sonido/silencio del juego.

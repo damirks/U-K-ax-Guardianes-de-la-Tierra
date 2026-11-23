@@ -1,0 +1,8 @@
+{
+  "name": "Remix U K\u0027áax: Guardianes de la Tierra",
+  "description": "Videojuego retro de aventuras, preservación de la naturaleza y aprendizaje del maaya t\u0027aan con 8 minijuegos interactivos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>U K'áax: Guardianes de la Tierra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+<button id="mute-btn">🔊</button>
+
+  <section id="start-screen" class="screen">
+    <div class="start-sky" aria-hidden="true">
+      <span class="pixel-cloud cloud-one"></span>
+      <span class="pixel-cloud cloud-two"></span>
+      <span class="pixel-sun"></span>
+      <span class="start-bird bird-one">◆</span>
+      <span class="start-bird bird-two">◆</span>
+    </div>
+    <div class="start-leaves leaves-left" aria-hidden="true">🌿</div>
+    <div class="start-leaves leaves-right" aria-hidden="true">🌿</div>
+
+    <div class="start-content">
+      <div class="start-eyebrow">✦ UNA AVENTURA PARA CUIDAR NUESTRO MUNDO ✦</div>
+      <header class="game-logo" aria-label="U K'áax: Guardianes de la Tierra">
+        <div class="logo-leaves" aria-hidden="true">🌿 🍃 🌿</div>
+        <h1><span>U K'áax</span></h1>
+        <div class="logo-plank">GUARDIANES DE LA TIERRA</div>
+        <div class="logo-subtitle">APRENDE · EXPLORA · PROTEGE</div>
+      </header>
+
+      <div class="start-landscape" aria-hidden="true">
+        <div class="pixel-mountain mountain-back"></div>
+        <div class="pixel-mountain mountain-front"></div>
+        <div class="start-pyramid"><div class="pyramid-door"></div></div>
+        <img class="start-decoration decor-house" src="assets/escenarios/casa.png" alt="">
+        <img class="start-decoration decor-school" src="assets/escenarios/escuela.png" alt="">
+        <img class="start-decoration decor-jungle" src="assets/escenarios/kaax.png" alt="">
+        <img class="start-decoration decor-park" src="assets/escenarios/parque.png" alt="">
+        <div class="start-ground"></div>
+        <div class="start-path"></div>
+      </div>
+
+      <div class="start-tagline">¡Conviértete en guardián de la naturaleza y descubre palabras en maaya t'aan!</div>
+      <button id="start-tap" type="button" aria-label="Iniciar juego">▶ ENTER PARA INICIAR</button>
+      <div class="start-footnote"><span>🌱</span> CADA RESPUESTA TE ACERCA A UN MUNDO MEJOR <span>🌎</span></div>
+    </div>
+  </section>
+
+  <section id="select-screen" class="screen hidden">
+    <div class="creator-contact">
+      <button type="button" id="contact-toggle" aria-expanded="false" aria-controls="contact-card">✉ Contacto con creadores</button>
+      <div id="contact-card" class="contact-card hidden">
+        <strong>¿Tienes una idea para mejorar el juego?</strong>
+        <p>¡Nos encantará leerte!</p>
+        <a href="mailto:Kdamir733@gmail.com">📧 Kdamir733@gmail.com</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">📘 Facebook: Damir Iuit</a>
+        <a href="https://www.instagram.com/dam_iuit/" target="_blank" rel="noopener noreferrer">📸 Instagram: @dam_iuit</a>
+      </div>
+    </div>
+    <h1>Elige tu aventura</h1>
+    <button type="button" id="btn-new-player" class="link-btn hidden">🔄 No soy yo — cambiar de jugador</button>
+    <div id="player-profile"><h2>¿Quién será el Guardián?</h2><label for="player-name"><strong>¿Cómo te llamas?</strong></label><input id="player-name" maxlength="22" placeholder="Tu nombre" autocomplete="nickname"><strong>Elige tu icono</strong><div id="avatar-options" aria-label="Elige el icono de tu jugador"><button type="button" class="avatar-choice selected" data-avatar="🧑🏽‍🌾">🧑🏽‍🌾</button><button type="button" class="avatar-choice" data-avatar="🧝🏽">🧝🏽</button><button type="button" class="avatar-choice" data-avatar="🧑🏽">🧑🏽</button><button type="button" class="avatar-choice" data-avatar="👩🏽‍🌾">👩🏽‍🌾</button><button type="button" class="avatar-choice" data-avatar="🧒🏽">🧒🏽</button><button type="button" class="avatar-choice" data-avatar="🐆">🐆</button></div><p id="player-level-label">Nivel actual: Casa</p><button class="btn" id="btn-save-player" type="button">Guardar perfil y jugar</button></div>
+    <p id="progress-label" class="rainbow-text">Completa cada nivel para desbloquear el siguiente.</p>
+    <div class="level-tabs" role="tablist" aria-label="Apartados de minijuegos">
+      <button type="button" class="level-tab active" data-tab="0" role="tab" aria-selected="true">🌿 Aventuras 1–6</button>
+      <button type="button" class="level-tab" data-tab="1" role="tab" aria-selected="false">➡ Más juegos y MayaTets</button>
+    </div>
+    <div id="level-grid" data-tab="0"></div>
+    <button class="btn" id="btn-mayatets" type="button">🎓 MayaTets — Quiz de maya (opcional)</button>
+  </section>
+
+  <section id="game-screen" class="screen hidden">
+    <button id="btn-back-select" type="button">← Escenarios</button>
+    <div id="hud-top"><h2 id="level-title"></h2><div id="timer">⏱ 60s</div></div>
+    <div id="hud-mid">
+      <div><div id="lives">❤️❤️❤️</div><div id="attempts-label">Oportunidades para superar el nivel: 3</div></div>
+      <div class="res-row"><span id="res-icon">🌳</span><div class="bar-track"><div class="bar-fill" id="res-fill" style="width:0%;"></div></div></div>
+      <div id="goal-count">0/8</div>
+    </div>
+    <div id="play-area"></div>
+    <div id="hint" role="status" aria-live="polite"></div>
+    <div id="touch-controls" aria-label="Controles de movimiento">
+      <button class="touch-btn touch-up" data-dir="up" aria-label="Mover arriba">▲</button>
+      <button class="touch-btn touch-left" data-dir="left" aria-label="Mover a la izquierda">◀</button>
+      <button class="touch-btn touch-down" data-dir="down" aria-label="Mover abajo">▼</button>
+      <button class="touch-btn touch-right" data-dir="right" aria-label="Mover a la derecha">▶</button>
+    </div>
+    <div id="glossary-strip"></div>
+  </section>
+
+  <section id="quiz-screen" class="screen hidden">
+    <button class="btn" id="btn-quiz-back" type="button">← Volver a escenarios</button>
+    <h1>🌿 MayaTets</h1><p>Quiz de palabras mayas. Este minijuego es opcional.</p>
+    <div id="quiz-card"><div id="quiz-progress"></div><h2 id="quiz-question"></h2><div id="quiz-options"></div><p id="quiz-feedback" aria-live="polite"></p><button class="btn hidden" id="btn-quiz-next" type="button">Siguiente pregunta</button></div>
+    <p id="quiz-score"></p>
+  </section>
+
+  <section id="end-screen" class="screen hidden">
+    <div class="end-sparkles" aria-hidden="true">✨ 🌿 🦋 🌿 ✨</div>
+    <div class="emoji-row end-trophy">🏆</div>
+    <h1 style="font-family:'Baloo 2';">¡MISIÓN CUMPLIDA, GUARDIÁN!</h1>
+    <p class="end-subtitle">¡La Tierra está más feliz gracias a ti!</p>
+    <p id="end-msg"></p>
+    <div id="end-glossary" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;"></div>
+    <button class="btn" id="btn-restart">Volver a escenarios</button>
+  </section>
+</div>
+
+<div id="vocab-overlay" class="modal-overlay hidden">
+  <div class="modal">
+    <h3 id="vocab-title">¡Un NPC te pone a prueba!</h3>
+    <div class="maya-word" id="vocab-word"></div>
+    <div id="vocab-options"></div>
+    <div id="feedback-msg"></div>
+  </div>
+</div>
+<div id="result-overlay" class="modal-overlay hidden">
+  <div class="modal">
+    <h3 id="result-title"></h3>
+    <p id="result-msg"></p>
+    <button class="btn" id="btn-result-continue"></button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
